@@ -28,7 +28,7 @@ export class App extends React.Component {
       this.setState({ isLoading: true });
       axios({
         method: 'post',
-        url: 'http://localhost:8000/api/recommender',
+        url: '/api/recommender',
         responseType: 'json',
         data: formData
       }).then((res) => {
