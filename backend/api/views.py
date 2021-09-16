@@ -14,12 +14,20 @@ def welcome(request):
 
 @csrf_exempt
 def getRecommendations(request):
-    res = {"msg": "i got your image"}
+    res = {"status": ""}
+
     imageFile = request.FILES['image']
-
     imageFile = imageFile.read()
-
     predictions = predict(imageFile)
-    print(predictions)
+    recomms = getRecommendation(request.POST["location"], predictions)
+
+    if (len(recomms) != 0):
+        res["status"] = "OK"
+        res["predictions"] = predictions[0]
+        res["data"] = recomms
+    else:
+        res["status"] = "FAIL"
+        res["predictions"] = predictions[0]
+        res["msg"] = "Couldn't get restaurants near you that serve this food."
 
     return HttpResponse(json.dumps(res), content_type='application/json')

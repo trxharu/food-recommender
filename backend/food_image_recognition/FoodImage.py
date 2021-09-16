@@ -19,7 +19,7 @@ def predict(image_data):
     # Loading Model data
     model = load_model(model_path)
 
-    # Preprocessing data
+    # Preprocessing image
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = Image.open(io.BytesIO(image_data))
 
@@ -41,6 +41,6 @@ def predict(image_data):
 
     for i in top_five:
         top_five_preds.append(
-            {"dish": class_names[i], "confidence": preds[i] * 100})
+            {"dish": class_names[i], "accuracy": preds[i] * 100})
 
     return top_five_preds

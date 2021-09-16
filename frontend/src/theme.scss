@@ -1,3 +1,5 @@
+@import "__mixins.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@
 
 body {
   font-family: sans-serif;
+  background-color: #e1e3e2;
 }
 
 .container {
@@ -19,20 +22,53 @@ body {
   align-items: center;
 
   .content {
-    width: 600px;
-    height: 300px;
-    border: 1px solid black;
-    padding: 16px;
+    width: 800px;
+    height: 600px;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 4px;
+    
+    .spinner, .error {
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      img {
+        margin-left: 4px;
+        width: 24px;
+      }
+    }
 
     button {
       width: 250px;
       height: 100px;
       margin-top: 48px;
+      cursor: pointer;
     }
 
     p {
       margin-top: 16px;
       font-size: 0.75rem;
     }
+
+    .mapbox-container {
+      width: 100%;
+      min-height: 400px;
+      margin-top: 16px;
+    }
+  }
+
+  @include desktop() {
+    .content {
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      text-align: center;
+      
+      button {
+        width: 90%;
+        height: 100px;
+      }
+    }
   }
 }
+
