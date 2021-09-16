@@ -88,7 +88,9 @@ export class App extends React.Component {
             <p>*It requires camera and location permissions.</p>
           </div>
           {this.state.data.length !== 0 &&
-            <MapDetail data={this.state.data} msg={`${this.state.predictions.dish} (with ${Math.ceil(this.state.predictions.accuracy)}% accuracy)`} />
+            <MapDetail data={this.state.data}
+              locations={this.state.location}
+              msg={`${this.state.predictions.dish} (with ${Math.ceil(this.state.predictions.accuracy)}% accuracy)`} />
           }
         </div>
       </div>

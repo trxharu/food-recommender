@@ -13,6 +13,7 @@ interface Feature {
 interface MapProps {
   data: Feature[];
   msg: string;
+  locations: { lat: number; lng: number };
 }
 
 export class MapDetail extends React.Component<MapProps> {
@@ -25,14 +26,20 @@ export class MapDetail extends React.Component<MapProps> {
       accessToken: process.env.REACT_APP_MAPBOX_KEY,
       container: this.mapContainer.current as HTMLElement,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: this.props.data[0].geometry.coordinates as LngLatLike,
+      center: [this.props.locations.lng, this.props.locations.lat],
       zoom: 12
     });
+
+    new Marker({ color: "#035efc" })
+      .setLngLat([this.props.locations.lng, this.props.locations.lat])
+      .setPopup(new Popup()
+        .setHTML(`<h1>You</h1>`))
+      .addTo(map);
 
     // Adding Markers to map
     this.props.data.forEach(feature => {
       if (feature.properties.name) {
-        new Marker()
+        new Marker({ color: "#03fc52" })
           .setLngLat(feature.geometry.coordinates as LngLatLike)
           .setPopup(new Popup()
             .setHTML(`<h1>${feature.properties.name}</h1><p>${feature.properties.cuisine}</p>`))
