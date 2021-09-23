@@ -79,7 +79,7 @@ export class App extends React.Component {
       <div className="container">
         <div className="content">
           <div ref={this.homeDiv}>
-            <h2>Food Recommender App</h2>
+            <h2>Indian Food Recommender App</h2>
             <input id="imageFile" type="file" capture accept="image/*" style={{ display: "none" }} />
             <button onClick={this.onFileUpload}>Capture an Image <br /> or <br /> Select an Image File</button> <br />
             {this.state.isError && <div className="error">{`${this.state.predictions.dish} (${Math.ceil(this.state.predictions.accuracy)}% accuracy)`}</div>}

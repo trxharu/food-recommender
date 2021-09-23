@@ -3,7 +3,7 @@ import os
 import overpass
 
 
-def getRecommendation(location, food_predictions):
+def getRecommendation(location, food_prediction):
     api = overpass.API(
         "https://lz4.overpass-api.de/api/interpreter", timeout=300)
 
@@ -23,7 +23,7 @@ def getRecommendation(location, food_predictions):
         temp = cl.split(",")
         data[temp[0]] = temp[1].strip()
 
-    cuisine = data[food_predictions[0]["dish"].strip()]
+    cuisine = data[food_prediction.strip()]
     # getting a list of restaurants near given location in 5km radius
     overpass_query = f'node["amenity"="restaurant"]["cuisine"={cuisine}](around:3000.0, {locatn["lat"]}, {locatn["lng"]});'
     response = api.get(overpass_query)

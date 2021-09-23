@@ -18,16 +18,16 @@ def getRecommendations(request):
 
     imageFile = request.FILES['image']
     imageFile = imageFile.read()
-    predictions = predict(imageFile)
-    recomms = getRecommendation(request.POST["location"], predictions)
+    prediction, acc = predict(imageFile)
+    recomms = getRecommendation(request.POST["location"], prediction)
 
     if (len(recomms) != 0):
         res["status"] = "OK"
-        res["predictions"] = predictions[0]
+        res["predictions"] = { "dish": prediction, "accuracy": (acc * 100) }
         res["data"] = recomms
     else:
         res["status"] = "FAIL"
-        res["predictions"] = predictions[0]
+        res["predictions"] = { "dish": prediction, "accuracy": (acc * 100) }
         res["msg"] = "Couldn't get restaurants near you that serve this food."
 
     return HttpResponse(json.dumps(res), content_type='application/json')
