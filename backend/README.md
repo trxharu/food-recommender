@@ -19,3 +19,5 @@ The code for model training is in  `food_image_recognition` folder, with two jup
 
 1. `prepare.ipynb` file contains the code for preprocessing the image data.
 2. `model_creation.ipynb` file contains the code for deep learning model creation and training.
+
+Note: Model creation and training was done on https://colab.research.google.com
