@@ -2,7 +2,8 @@
 ***
 ## Introduction
 This is backend part of Indian food recommender web app. It is implemented in python using Django Framework.
-
+Gunicorn server is used as a gateway to forward Nginx's `/api` requests to Django server.
+***
 ## Implementation
 This Django project contains a django app `api` which handles all the REST api request and returns results.
 

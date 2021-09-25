@@ -28,6 +28,10 @@ Before getting started, make sure you meet following requirements.
 3. Run `docker-compose up` to start the frontend and backend server.
 4. To close the server run `docker-compose down` in another terminal.
 
+## Run some examples
+
+`examples` folder contains few images that can be used for testing. Open README for examples to know more.
+***
 ## References 
 1. Image Dataset provided by Kaggle - https://www.kaggle.com/iamsouravbanerjee/indian-food-images-dataset
 2. Location Search is provided by OpenStreetMap's Overpass API - https://wiki.openstreetmap.org/wiki/Overpass_API

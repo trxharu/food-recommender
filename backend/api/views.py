@@ -7,28 +7,26 @@ from food_image_recognition.FoodImage import predict
 from recommender.FoodRecommender import getRecommendation
 
 
-def welcome(request):
-    data = {"msg": "This is a Food recommendation API."}
-    return HttpResponse(json.dumps(data),
-                        content_type='application/json')
-
-
 @csrf_exempt
 def getRecommendations(request):
+    # Response object
     res = {"status": ""}
 
+    # Extracting image file from HTTP request
     imageFile = request.FILES['image']
     imageFile = imageFile.read()
-    prediction, acc = predict(imageFile)
-    recomms = getRecommendation(request.POST["location"], prediction)
 
-    if (len(recomms) != 0):
+    # Predicting image using image recognition module
+    prediction, acc = predict(imageFile)
+
+    try:
+        recomms = getRecommendation(request.POST["location"], prediction)
         res["status"] = "OK"
         res["predictions"] = { "dish": prediction, "accuracy": ceil(acc) }
         res["data"] = recomms
-    else:
+    except Exception as err:
         res["status"] = "FAIL"
         res["predictions"] = { "dish": prediction, "accuracy": ceil(acc) }
-        res["msg"] = "Couldn't get restaurants near you that serve this food."
-
+        res["msg"] = str(err)
+            
     return HttpResponse(json.dumps(res), content_type='application/json')
