@@ -7,7 +7,7 @@ This is a Image Recognition project for recognizing indian foods from 80 differe
 ## Implementation
 The backend part of the web app is created using Django Framework, to know more about backend implementation read `backend`'s README.
 
-The frontend part is build using React Js with Typescript and build files are served on Nginx Web server. To know more about frontend implementation read `frontend`'s README.
+The frontend part is build using React Js with Typescript and then build, static files from build are served on Nginx Web server. To know more about frontend implementation read `frontend`'s README.
 ***
 ## Architecture
 ![image](https://github.com/cyr1Lprog/food-recommender/blob/main/images/architecture.drawio.png)
@@ -30,7 +30,7 @@ Before getting started, make sure you meet following requirements.
 
 ## Run some examples
 
-`examples` folder contains few images that can be used for testing. Open README for examples to know more.
+`examples` folder contains few images that can be used for testing. Open README for examples to know how to use.
 ***
 ## References 
 1. Image Dataset provided by Kaggle - https://www.kaggle.com/iamsouravbanerjee/indian-food-images-dataset

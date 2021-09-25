@@ -80,7 +80,7 @@ export class App extends React.Component {
         <div className="content">
           <div ref={this.homeDiv}>
             <h2>Indian Food Recommender App</h2>
-            <input id="imageFile" type="file" capture accept="image/*" style={{ display: "none" }} />
+            <input id="imageFile" type="file" accept="image/*" style={{ display: "none" }} />
             <button onClick={this.onFileUpload}>Capture an Image <br /> or <br /> Select an Image File</button> <br />
             {this.state.isError && <div className="error">{`${this.state.predictions.dish} (${Math.ceil(this.state.predictions.accuracy)}% accuracy)`}</div>}
             {this.state.isLoading && <div className="spinner">Getting Results... this may take a while <img src={spinner} alt="Loading ..." /></div>}
