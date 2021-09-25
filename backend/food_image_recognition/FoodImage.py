@@ -1,7 +1,6 @@
 import io
-import math
-import cv2
 import os
+import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet import preprocess_input
@@ -31,4 +30,4 @@ def predict(image_file):
         class_names = f.readlines()
         f.close()
 
-    return class_names[top_index], math.ceil(predictions[0][top_index])
+    return class_names[top_index], (predictions[0][top_index] * 100)

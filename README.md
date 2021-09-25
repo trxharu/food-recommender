@@ -9,6 +9,10 @@ The backend part of the web app is created using Django Framework, to know more 
 
 The frontend part is build using React Js with Typescript and build files are served on Nginx Web server. To know more about frontend implementation read `frontend`'s README.
 ***
+## Architecture
+![image](https://github.com/cyr1Lprog/food-recommender/blob/master/image/architecture.drawio.png)
+
+***
 ## Requirements
 Before getting started, make sure you meet following requirements.
 

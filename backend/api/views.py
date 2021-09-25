@@ -1,4 +1,5 @@
 import json
+from math import ceil
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
@@ -23,11 +24,11 @@ def getRecommendations(request):
 
     if (len(recomms) != 0):
         res["status"] = "OK"
-        res["predictions"] = { "dish": prediction, "accuracy": (acc * 100) }
+        res["predictions"] = { "dish": prediction, "accuracy": ceil(acc) }
         res["data"] = recomms
     else:
         res["status"] = "FAIL"
-        res["predictions"] = { "dish": prediction, "accuracy": (acc * 100) }
+        res["predictions"] = { "dish": prediction, "accuracy": ceil(acc) }
         res["msg"] = "Couldn't get restaurants near you that serve this food."
 
     return HttpResponse(json.dumps(res), content_type='application/json')

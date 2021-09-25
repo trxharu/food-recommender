@@ -5,7 +5,7 @@ import overpass
 
 def getRecommendation(location, food_prediction):
     api = overpass.API(
-        "https://lz4.overpass-api.de/api/interpreter", timeout=300)
+        "https://z.overpass-api.de/api/interpreter", timeout=300)
 
     workdir = os.path.dirname(__file__)
     cuisine_data = os.path.join(workdir, "cuisine_data.txt")
