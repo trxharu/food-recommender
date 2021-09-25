@@ -1,7 +1,7 @@
 # Indian Food Recommender (based on location)
 ***
 ## Introduction
-This is a Image Recognition project for recognizing indian foods from 80 different classes and also show available resturants around you using your location. (based on image dataset provided by kaggle, link is in references section of this readme)
+This is a Image Recognition project for recognizing indian foods from 80 different classes and also show available restaurants around you using your location. (based on image dataset provided by kaggle, link is in references section of this readme)
 
 ***
 ## Implementation
