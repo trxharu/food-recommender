@@ -11,7 +11,7 @@ The api endpoint `/api/recommender` receives image and location data.
 
 The image is sent to `food_image_recognition` module and it predicts the dish using pre trained model.
 
-The predictionts received from `food_image_recognition` module and location data is passed into `recommeder` module which finds the resturants and return a list of Restaurants. 
+The predictions received from `food_image_recognition` module and location data is passed into `recommeder` module which finds the restaurants and return a list of Restaurants. 
 
 This data is then sent to the client.
 ***
