@@ -10,7 +10,7 @@ The backend part of the web app is created using Django Framework, to know more 
 The frontend part is build using React Js with Typescript and then build, static files from build are served on Nginx Web server. To know more about frontend implementation read `frontend`'s README.
 ***
 ## Architecture
-![image](https://github.com/cyr1Lprog/food-recommender/blob/main/images/architecture.drawio.png)
+![image](https://gitlab.com/trxharudev/food-recommender/-/raw/master/images/architecture.drawio.png)
 
 ***
 ## Requirements
@@ -23,7 +23,7 @@ Before getting started, make sure you meet following requirements.
 
 ## Getting Started
 
-1. Clone this repo using `git clone https://github.com/cyr1Lprog/food-recommender`.
+1. Clone this repo using `git clone https://gitlab.com/trxharudev/food-recommender`.
 2. Goto the cloned directory using `cd food-recommender`.
 3. Run `docker-compose up` to start the frontend and backend server.
 4. To close the server run `docker-compose down` in another terminal.
