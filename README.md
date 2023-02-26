@@ -23,7 +23,7 @@ Before getting started, make sure you meet following requirements.
 
 ## Getting Started
 
-1. Clone this repo using `git clone https://gitlab.com/trxharudev/food-recommender`.
+1. Clone this repo using `git clone https://gitlab.com/trxharudev/food-recommender.git`.
 2. Goto the cloned directory using `cd food-recommender`.
 3. Run `docker-compose up` to start the frontend and backend server.
 4. To close the server run `docker-compose down` in another terminal.
